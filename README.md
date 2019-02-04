@@ -14,9 +14,9 @@ For fast access make an alias to `fow.sh` in your `~/.bashrc`:
 alias fow="DIR/fow.sh"
 ```
 
-Also fowsh needs some specific environment variabels to be set:
+Also fowsh needs some specific environment variables to be set:
 - EDITOR - default editor for text files
-- RIMAGE - default rester images viewer/editor
+- RIMAGE - default raster images viewer/editor
 
 ## TODO
 - [x] Text files support
