@@ -21,7 +21,7 @@ Also fowsh needs some specific environment variables to be set:
 ## TODO
 - [x] Text files support
 - [x] Raster images support
-- [ ] Vector images support
+- [x] Vector images support
 - [ ] Movies
 - [ ] Links
 - [ ] Binaries?

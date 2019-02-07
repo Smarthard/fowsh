@@ -18,6 +18,10 @@ for arg in $@; do
 		*PNG*|*GIF*|*JPEG*)
 				envvar "FOWSH_RIMAGE" && "$FOWSH_RIMAGE" "$arg" ;;
 
+		### VECTOR IMAGES
+		*SVG*)
+				envvar "FOWSH_VIMAGE" && "$FOWSH_VIMAGE" "$arg" ;;
+
 		### JAVA ARCHIVE RUNNABLE	
 		*JAR*)
 				java -jar "$arg" ;;
