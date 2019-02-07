@@ -16,7 +16,7 @@ alias fow="DIR/fow.sh"
 
 Also fowsh needs some specific environment variables to be set:
 - EDITOR - default editor for text files
-- RIMAGE - default raster images viewer/editor
+- FOWSH\_RIMAGE - default raster images viewer/editor
 
 ## TODO
 - [x] Text files support
