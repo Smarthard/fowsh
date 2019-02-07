@@ -16,7 +16,7 @@ for arg in $@; do
 		
 		### RASTER IMAGES
 		*PNG*|*GIF*|*JPEG*)
-				envvar "FOWSH_RIMAGE" && "$RIMAGE" "$arg" ;;
+				envvar "FOWSH_RIMAGE" && "$FOWSH_RIMAGE" "$arg" ;;
 
 		### JAVA ARCHIVE RUNNABLE	
 		*JAR*)
