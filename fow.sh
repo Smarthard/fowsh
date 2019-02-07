@@ -1,7 +1,7 @@
 #!/bin/sh
 
 envvar() {
-	if [ -z ${!1} ]; then
+	if [ -z "${!1}" ]; then
 			echo "Environment virable ${1} is unset" >&2 
 			exit 1
 	fi
