@@ -7,16 +7,6 @@ envvar() {
 	fi
 }
 
-editor() {
-	envvar "EDITOR"
-	"$EDITOR" "$1"
-}
-
-rimage() {
-	envvar "FOWSH_RIMAGE"
-	"$RIMAGE" "$1"
-}
-
 
 for arg in $@; do
 	ftype=`file "$arg"`
@@ -26,7 +16,7 @@ for arg in $@; do
 		
 		### RASTER IMAGES
 		*PNG*|*GIF*|*JPEG*)
-				rimage "$arg" ;;
+				envvar "FOWSH_RIMAGE" && "$RIMAGE" "$arg" ;;
 
 		### JAVA ARCHIVE RUNNABLE	
 		*JAR*)
@@ -34,7 +24,7 @@ for arg in $@; do
 
 		### TEXT FILES (code sources like .c or .java included)
 		*text*) 
-				editor "$arg" ;;
+				envvar "EDITOR" && "$EDITOR" "$arg" ;;
 
 		### UNKNOWN FILES
 		*)
