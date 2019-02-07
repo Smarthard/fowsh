@@ -13,7 +13,7 @@ editor() {
 }
 
 rimage() {
-	envvar "RIMAGE"
+	envvar "FOWSH_RIMAGE"
 	"$RIMAGE" "$1"
 }
 
