@@ -1,7 +1,7 @@
 #!/bin/sh
 
 usage() {
-		echo "USAGE: $(basename $0) [-o program] [-n pattern] [-t type ...] FILE ..." 1>&2 
+	echo "USAGE: $(basename $0) [-o program] [-n pattern] [-t type ...] FILE ..." 1>&2 
 	exit 1
 }
 
@@ -10,9 +10,9 @@ while getopts "o:n:t:" arg; do
 		o)
 				o=${OPTARG} ;;
 		n)
-				n=${OPTARG};;
+				n=${OPTARG} ;;
 		t)
-				t=${OPTARG};;
+				t=${OPTARG} ;;
 		*)
 				usage
 	esac
@@ -20,7 +20,7 @@ done
 shift $((OPTIND-1))
 
 if [ $# -eq 0 ]; then
- usage
+	usage
 fi
 
 if [ ! -z "$n" -o ! -z "$t" ]; then
@@ -38,14 +38,15 @@ for arg in $@; do
 		fi
 
 		case "$proceed" in
-				y|Y) ;;
-				*) break ;;
+			y|Y) ;;
+			*) break ;;
 		esac
 	fi
 
+	# forced opening -o
 	if [ ! -z "$o" ]; then
-			${o} "$arg"
-			continue
+		${o} "$arg"
+		continue
 	fi
 
 	shopt -s nocasematch
@@ -67,18 +68,18 @@ for arg in $@; do
 		*text*) 
 				${EDITOR:?} "$arg" ;;
 
-
 		### UNKNOWN FILES
 		*)
 
 				### LINKS (URLs or domains)
+
 				ip="[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}(:[0-9]+)?"
 				url="(http[s]?:\/\/)?[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,}(:[0-9]+)?"
 				if [[ "$arg" =~ $ip|$url ]]; then
-						${BROWSER:?} "$arg"
+					${BROWSER:?} "$arg"
 				else
-						echo -e "$ftype\nUnknown file type. Please, spesify open mode" >&2 
-						exit 1
+					echo -e "$ftype\nUnknown file type. Please, spesify open mode" >&2 
+					exit 1
 				fi
 	esac
 done
