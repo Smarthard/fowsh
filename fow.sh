@@ -19,7 +19,7 @@ while getopts "o:n:t:" arg; do
 done
 shift $((OPTIND-1))
 
-if [ -z "$@" ]; then
+if [ $# -eq 0 ]; then
  usage
 fi
 
@@ -27,8 +27,21 @@ if [ ! -z "$n" -o ! -z "$t" ]; then
 	echo "options -n and -t not yet available"
 fi
 
+
 for arg in $@; do
 	ftype=`file "$arg"`
+	
+	if [ $# -gt 10 ]; then
+		if [ -z "$proceed" ]; then
+			echo -n "fowsh is going to open $# files. Would you like to proceed? [y/N] "
+			read proceed
+		fi
+
+		case "$proceed" in
+				y|Y) ;;
+				*) break ;;
+		esac
+	fi
 
 	if [ ! -z "$o" ]; then
 			${o} "$arg"

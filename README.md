@@ -35,5 +35,5 @@ Also fowsh needs some specific environment variables to be set:
    - [ ] Ignore files by type
    - [ ] HELP!
    - [x] Usage
-- [ ] Preventing to open too many files
+- [x] Preventing to open too many files
 
