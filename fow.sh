@@ -1,8 +1,39 @@
 #!/bin/sh
 
+usage() {
+		echo "USAGE: $(basename $0) [-o program] [-n pattern] [-t type ...] FILE ..." 1>&2 
+	exit 1
+}
+
+while getopts "o:n:t:" arg; do
+	case "${arg}" in
+		o)
+				o=${OPTARG} ;;
+		n)
+				n=${OPTARG};;
+		t)
+				t=${OPTARG};;
+		*)
+				usage
+	esac
+done
+shift $((OPTIND-1))
+
+if [ -z "$@" ]; then
+ usage
+fi
+
+if [ ! -z "$n" -o ! -z "$t" ]; then
+	echo "options -n and -t not yet available"
+fi
 
 for arg in $@; do
 	ftype=`file "$arg"`
+
+	if [ ! -z "$o" ]; then
+			${o} "$arg"
+			continue
+	fi
 
 	shopt -s nocasematch
 	case "$ftype" in
