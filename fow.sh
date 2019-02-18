@@ -23,9 +23,18 @@ for arg in $@; do
 		*text*) 
 				${EDITOR:?} "$arg" ;;
 
+
 		### UNKNOWN FILES
 		*)
-				echo -e "$ftype\nUnknown file type. Please, spesify open mode" >&2 
-				exit 1 ;;
+
+				### LINKS (URLs or domains)
+				ip="[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}(:[0-9]+)?"
+				url="(http[s]?:\/\/)?[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,}(:[0-9]+)?"
+				if [[ "$arg" =~ $ip|$url ]]; then
+						${BROWSER:?} "$arg"
+				else
+						echo -e "$ftype\nUnknown file type. Please, spesify open mode" >&2 
+						exit 1
+				fi
 	esac
 done

@@ -15,6 +15,7 @@ alias fow="DIR/fow.sh"
 ```
 
 Also fowsh needs some specific environment variables to be set:
+- BROWSER - default web browser
 - EDITOR - default editor for text files
 - FOWSH\_RIMAGE - default raster images viewer/editor
 - FOWSH\_VIMAGE - default vector images viewer/editor
@@ -24,7 +25,7 @@ Also fowsh needs some specific environment variables to be set:
 - [x] Raster images support
 - [x] Vector images support
 - [ ] Movies
-- [ ] Links
+- [x] Links
 - [ ] Binaries?
 - [ ] ???
 - [ ] Logging
