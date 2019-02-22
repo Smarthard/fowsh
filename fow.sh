@@ -68,6 +68,10 @@ for arg in $@; do
 		*text*) 
 				${EDITOR:?} "$arg" ;;
 
+		### VIDEO
+		*video*)
+				${FOWSH_VIDEO:?} "$arg" ;;
+
 		### UNKNOWN FILES
 		*)
 

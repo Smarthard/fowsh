@@ -19,12 +19,13 @@ Also fowsh needs some specific environment variables to be set:
 - EDITOR - default editor for text files
 - FOWSH\_RIMAGE - default raster images viewer/editor
 - FOWSH\_VIMAGE - default vector images viewer/editor
+- FOWSH\_VIDEO - default multimedia viewer
 
 ## TODO
 - [x] Text files support
 - [x] Raster images support
 - [x] Vector images support
-- [ ] Movies
+- [x] Movies, video
 - [x] Links
 - [ ] Binaries?
 - [ ] ???
