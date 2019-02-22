@@ -28,7 +28,7 @@ if [ ! -z "$n" -o ! -z "$t" ]; then
 fi
 
 
-for arg in $@; do
+for arg in "$@"; do
 	ftype=`file "$arg"`
 	
 	if [ $# -gt 10 ]; then
