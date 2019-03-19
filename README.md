@@ -30,6 +30,13 @@ export FOWSH_VIMAGE=$FOWSH_RIMAGE
 export FOWSH_VIDEO=mpv
 ```
 
+Source your updated `~/.bashrc`
+```shell
+source ~/.bashrc`
+```
+
+Now you ready to go!
+
 ## TODO
 - [x] Text files support
 - [x] Raster images support
