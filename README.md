@@ -25,9 +25,9 @@ Modify and copy these to your `~/.bashrc`:
 ```shell
 export BROWSER=firefox
 export EDITOR=vim
-export FOWSH\_RIMAGE=gimp
-export FOWSH\_VIMAGE=$FOWSH\_RIMAGE
-export FOWSH\_VIDEO=mpv
+export FOWSH_RIMAGE=gimp
+export FOWSH_VIMAGE=$FOWSH_RIMAGE
+export FOWSH_VIDEO=mpv
 ```
 
 ## TODO
