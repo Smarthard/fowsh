@@ -21,6 +21,15 @@ Also fowsh needs some specific environment variables to be set:
 - FOWSH\_VIMAGE - default vector images viewer/editor
 - FOWSH\_VIDEO - default multimedia viewer
 
+Modify and copy these to your `~/.bashrc`:
+```shell
+export BROWSER=firefox
+export EDITOR=vim
+export FOWSH\_RIMAGE=gimp
+export FOWSH\_VIMAGE=$FOWSH\_RIMAGE
+export FOWSH\_VIDEO=mpv
+```
+
 ## TODO
 - [x] Text files support
 - [x] Raster images support
