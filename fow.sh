@@ -72,6 +72,10 @@ for arg in "$@"; do
 		*video*)
 				${FOWSH_VIDEO:?} "$arg" ;;
 
+		### EMPTY FILES (not archives)
+		*empty)
+				;;
+
 		### UNKNOWN FILES
 		*)
 
