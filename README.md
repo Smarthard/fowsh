@@ -32,7 +32,7 @@ export FOWSH_VIDEO=mpv
 
 Source your updated `~/.bashrc`
 ```shell
-source ~/.bashrc`
+source ~/.bashrc
 ```
 
 Now you ready to go!
