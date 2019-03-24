@@ -6,7 +6,7 @@ fowsh is a shell wrapper for instant opening files such as ascii text, images, m
 Clone this repository, place `fow.sh` somewhere you want to:
 ```shell
 git clone https://github.com/Smarthard/fowsh
-move fowsh/fow.sh DIR/
+mv fowsh/fow.sh DIR/
 ```
 
 For fast access make an alias to `fow.sh` in your `~/.bashrc`:
