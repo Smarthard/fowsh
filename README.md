@@ -1,5 +1,23 @@
 # fowsh 
-fowsh is a shell wrapper for instant opening files such as ascii text, images, movies, etc...
+fowsh is a shell wrapper for instant opening files such as ascii text, images, movies, etc... It allows you to work with regular files without thinking what you need to open them.
+
+## What fowsh can do
+
+It just opens file for you. Look, here some examples of using:
+
+```shell
+$ fow Projects/fowsh/fow.sh # opens fowsh's shell scipt in your EDITOR
+```
+
+AVI file opening demo:
+
+![demo mpv](https://github.com/Smarthard/fowsh/blob/master/images/demo_mpv.png)
+
+Even `ls` output with changed opening command:
+
+```shell
+$ fow -o less `ls`
+```
 
 ## Installation
 
