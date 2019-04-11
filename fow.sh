@@ -90,19 +90,21 @@ if read -t 0 ; then
 
 	done < /dev/stdin
 else
-	if [ $# -gt 10 ]; then
-		if [ -z "$proceed" ]; then
-			echo -n "fowsh is going to open $# files. Would you like to proceed? [y/N] "
-			read proceed
-		fi
-
-		case "$proceed" in
-			y|Y) ;;
-			*) break ;;
-		esac
-	fi
 
 	for arg in "$@"; do
+
+		if [ $# -gt 10 ]; then
+			if [ -z "$proceed" ]; then
+				echo -n "fowsh is going to open $# files. Would you like to proceed? [y/N] "
+				read proceed
+			fi
+
+			case "$proceed" in
+				y|Y) ;;
+				*) break ;;
+			esac
+		fi
+
 		force "$arg" || fow "$arg"
 	done
 fi
