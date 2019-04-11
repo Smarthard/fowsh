@@ -30,7 +30,7 @@ fow() {
 
 		### TEXT FILES (code sources like .c or .java included)
 		*text*) 
-				${EDITOR:?} "$1" ;;
+				${EDITOR:-cat} "$1" ;;
 
 		### VIDEO
 		*video*)
