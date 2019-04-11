@@ -1,7 +1,12 @@
 #!/bin/sh
 
 usage() {
-	echo "USAGE: $(basename $0) [-o program] [-n pattern] [-t type ...] FILE ..." 1>&2 
+	echo -e "USAGE: $(basename $0) [-o program] [-n pattern] [-t type ...] FILE ...
+
+ -o \tforce opening with...
+ -n \tfilter by file name (not implemented)
+ -t \tfilter by file type (not implemented)" 1>&2
+	
 	exit 1
 }
 
@@ -61,7 +66,7 @@ force() {
 	fi
 }
 
-while getopts "o:n:t:" arg; do
+while getopts "o:n:t:h?" arg; do
 	case "${arg}" in
 		o)
 				o=${OPTARG} ;;
@@ -69,7 +74,7 @@ while getopts "o:n:t:" arg; do
 				n=${OPTARG} ;;
 		t)
 				t=${OPTARG} ;;
-		*)
+		?|h|*)
 				usage
 	esac
 done
