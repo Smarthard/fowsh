@@ -19,6 +19,12 @@ Even `ls` output with changed opening command:
 $ fow -o less `ls`
 ```
 
+...or command pipelining:
+
+```shell
+$ ls | fow -o cat
+```
+
 ## Installation
 
 Clone this repository, place `fow.sh` somewhere you want to:
