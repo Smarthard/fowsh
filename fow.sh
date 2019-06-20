@@ -28,8 +28,9 @@ fow() {
 		*JAR*)
 				java -jar "$1" ;;
 
+        ### JSON
 		### TEXT FILES (code sources like .c or .java included)
-		*text*) 
+		*text*|*JSON*)
 				${EDITOR:-cat} "$1" ;;
 
 		### VIDEO
